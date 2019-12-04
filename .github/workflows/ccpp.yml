@@ -13,11 +13,11 @@ jobs:
       run: ./configure
     - name: make
       run: make
-   - name: Upload artifact
-    uses: actions/upload-artifact@v1.0.0
-    with:
-      # Artifact name
-      name: plugin 
-      # Directory containing files to upload
-      path: flist.so
+    - name: Upload artifact
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        # Artifact name
+        name: plugin 
+        # Directory containing files to upload
+        path: flist.so
     
