@@ -9,8 +9,8 @@ jobs:
     
     steps:
     - uses: actions/checkout@v1
-    - name: configure
-      run: ./configure
+    - name: dependencies
+      run: sudo apt-get install build-essential make pidgin-dev libjson-glib-dev libnss3-dev 
     - name: make
       run: make
     - name: Upload artifact
