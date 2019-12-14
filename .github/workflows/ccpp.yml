@@ -10,9 +10,10 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: dependencies
-      run: sudo apt-get update && sudo apt-get -y install build-essential make pidgin-dev libjson-glib-dev libnss3-dev 
+      run: sudo apt-get update && sudo apt-get -y install build-essential make pidgin-dev libjson-glib-dev libnss3-dev gcc-mingw-w64-i686 make nsis 
     - name: make
       run: make
+    - name: make prepare_cross && make win_installer
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0
       with:
@@ -20,4 +21,11 @@ jobs:
         name: plugin 
         # Directory containing files to upload
         path: flist.so
+    - name: Upload artifact windows
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        # Artifact name
+        name: windowsinstaller
+        # Directory containing files to upload
+        path: fchat-pidgin-setup.exe
     
