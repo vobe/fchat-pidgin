@@ -28,4 +28,3 @@ jobs:
         name: windowsinstaller
         # Directory containing files to upload
         path: fchat-pidgin-setup.exe
-    
