@@ -13,7 +13,8 @@ jobs:
       run: sudo apt-get update && sudo apt-get -y install build-essential make pidgin-dev libjson-glib-dev libnss3-dev gcc-mingw-w64-i686 make nsis 
     - name: make
       run: make
-    - name: make prepare_cross && make win_installer
+    - name: make win
+      run: make prepare_cross && make win_installer
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0
       with:
